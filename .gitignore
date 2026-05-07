@@ -1,10 +1,39 @@
-node_modules/
+name: HTTP APP workflow
 
-dist/
-build/
+on:
+  push:
+    branches:
+      - main
+      - master
+      - "feature/**"
 
-.env
-.env.local
-.env.*.local
+  # pull_request:
+  #   branches:
+  #     - main
 
-.vscode/
+
+jobs:
+  test_and_build: 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: clone code 
+        uses: actions/checkout@v5
+
+      - name: set up node js environment
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: install node js packages
+        run: npm install
+
+
+      # - name: run test 
+      #   run: npm run test
+
+      - name: compile source code
+        run: npm run build
+
+
+ 
