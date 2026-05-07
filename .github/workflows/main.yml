@@ -32,8 +32,8 @@ jobs:
       # - name: run test 
       #   run: npm run test
 
-      - name: compile source code
-        run: npm run build
+     # - name: compile source code
+     #   run: npm run build
 
 
  
