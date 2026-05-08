@@ -7,7 +7,7 @@ on:
 #    branches:
     #  - master
 jobs:
-  first http pro:
+  first http pro
     runs-on: ubuntu-latest
     steps:
       - name: clone code
