@@ -1,26 +1,29 @@
-name: FIREST PROJECT
+name: FIRST PROJECT
+
 on:
   push:
     branches:
       - "feature**"
- # pull_request:
-#    branches:
-    #  - master
+
+# pull_request:
+#   branches:
+#     - master
+
 jobs:
-  first http pro
+  first-http-pro:
     runs-on: ubuntu-latest
+
     steps:
-      - name: clone code
-        uses: actions/sheckout@v5
+      - name: Clone code
+        uses: actions/checkout@v4
 
-      - name: setup env node js 
-        uses: actions/setup-node@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 25
+          node-version: 20
 
-      - name: npm install packages
+      - name: Install packages
         run: npm install
 
-      - name: build project
+      - name: Build project
         run: npm run build
-    
