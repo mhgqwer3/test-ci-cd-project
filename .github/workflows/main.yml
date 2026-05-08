@@ -19,7 +19,7 @@ jobs:
           node-version: 25
 
       - name: npm install packages
-        run: "npm install"
+        run: npm install
 
       - name: build project
         run: npm run build
