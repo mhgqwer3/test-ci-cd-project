@@ -1,39 +1,26 @@
-name: HTTP APP workflow
-
+name: FIREST PROJECT
 on:
   push:
     branches:
-      - main
-      - master
-      - "feature/**"
-
-  # pull_request:
-  #   branches:
-  #     - main
-
-
+      - "feature**"
+ # pull_request:
+#    branches:
+    #  - master
 jobs:
-  test_and_build: 
+  first http pro:
     runs-on: ubuntu-latest
-
     steps:
-      - name: clone code 
-        uses: actions/checkout@v5
+      - name: clone code
+        uses: actions/sheckout@v5
 
-      - name: set up node js environment
+      - name: setup env node js 
         uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: 25
 
-      - name: install node js packages
-        run: npm install
+      - name: npm install packages
+        run: "npm install"
 
-
-      # - name: run test 
-      #   run: npm run test
-
-     # - name: compile source code
-     #   run: npm run build
-
-
- 
+      - name: build project
+        run: npm run build
+    
